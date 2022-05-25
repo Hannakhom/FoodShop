@@ -17,9 +17,10 @@ public class User {
     }
 
     public void setName(String name) {
-        this.name = name;
         if (name == null || name.isEmpty()) {
             System.out.println("error");
+        }else{
+            this.name = name;
         }
     }
     public String getEmail () {
@@ -28,9 +29,10 @@ public class User {
 
 
     public void setEmail (String email){
-        this.email = email;
         if (email == null || email.isEmpty()){
             System.out.println("error");
+        }else{
+            this.email = email;
         }
     }
 
@@ -39,14 +41,11 @@ public class User {
     }
 
     public void setPassword (String password){
-        this.password = password;
-        String p = ".{8,}";
-        if (password.matches(p)) {
-            System.out.println(password);
+        if (password.length() >= 8){
+            this.password = password;
         } else {
-            System.out.println("error");
+            System.out.println("incorrect");
         }
-
     }
 
     public FoodStuff [] getBasket (){
@@ -56,6 +55,14 @@ public class User {
     public void setBasket (FoodStuff[]basket){
         this.basket = basket;
 
+    }
+
+    public double getPriceBasket() {
+        double sum = 0;
+        for (int i = 0; i < basket.length; i++) {
+            sum += basket[i].getPrice();
+        }
+        return sum;
     }
 
     @Override

@@ -5,7 +5,6 @@ public class Shop {
         this.foodStuffs = foodStuffs;
     }
     public Shop(){
-//        this.foodStuffs = new FoodStuff[10];
     }
 
     public FoodStuff getFoodStuffByFoodName(String foodName){

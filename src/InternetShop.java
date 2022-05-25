@@ -15,26 +15,25 @@ public class InternetShop  extends Shop{
         this.users = users;
     }
 
-    public User [] getByUserName(String name){
-        User [] result = new User[users.length];
+    public String getUserByName(String name){
+        String result = new String();
         for (int i = 0; i < users.length; i++) {
             if(users[i].getName().equals(name)){
-                result[i] = users[i];
+                result = users[i].toString();
             }
         }
         return result;
     }
 
-    public User [] getByUserEmail(String email){
-        User [] result = new User[users.length];
+    public String getUserByEmail(String email){
+        String result = new String();
         for (int i = 0; i < users.length; i++) {
             if(users[i].getEmail().equals(email)){
-                result[i] = users[i];
+                result = users[i].toString();
             }
         }
         return result;
     }
-
     public static void printArrUsers(User [] users){
         for (int i = 0; i < users.length; i++) {
             if(users [i] != null){
